@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +17,24 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO) //auto generates
     public Integer id;
 
-    public String subject;
+    public String zodiac;
 
-    public String details;
+    public String year;
+
+    @Column (columnDefinition = "TEXT")
+    public String general;
+
+    @Column (columnDefinition = "TEXT")
+    public String wealth;
+    
+    @Column (columnDefinition = "TEXT")
+    public String health;
+
+    @Column (columnDefinition = "TEXT")
+    public String tips; 
+
+    @Column (columnDefinition = "TEXT")
+    public String image; 
 
     //**************************************** */
     //  Constructors
@@ -28,9 +44,24 @@ public class Todo {
 
     }
 
-    public Todo(String subject, String details){
-        this.subject = subject;
-        this.details = details;
+    public Todo(
+        String zodiac,
+        String year,
+        String general,
+        String wealth,
+        String health,
+        String tips, 
+        String image
+        )
+        {
+        this.zodiac = zodiac;
+        this.year = year;
+        this.general = general;
+        this.wealth = wealth;
+        this.health = health; 
+        this.tips = tips;  
+        this.image = image; 
+
     }
 
     //**************************************** */
@@ -45,19 +76,60 @@ public class Todo {
         this.id = id;
     }
 
-    public String getSubject(){
-        return this.subject;
+    public String getZodiac(){
+        return this.zodiac;
     }
 
-    public void setSubject(String subject){
-        this.subject = subject;
+    public void setZodiac(String zodiac){
+        this.zodiac = zodiac;
     }
 
-    public String getDetails(){
-        return this.details;
+    public String getYear(){
+        return this.year;
     }
 
-    public void setDetails(String details){
-        this.details = details;
+    public void setYear(String year){
+        this.year = year;
     }
+
+    public String getGeneral(){
+        return this.general;
+    }
+
+    public void setGeneral(String general){
+        this.general = general;
+    }
+    
+    public String getWealth(){
+        return this.wealth;
+    }
+
+    public void setWealth(String wealth){
+        this.wealth = wealth;
+    }
+
+    public String getHealth(){
+        return this.health;
+    }
+
+    public void setHealth(String health){
+        this.health = health;
+    }
+
+    public String getTips(){
+        return this.tips;
+    }
+
+    public void setTips(String tips){
+        this.tips = tips;
+    }
+
+    public String getImage(){
+        return this.image;
+    }
+
+    public void setImage(String image){
+        this.image = image;
+    }
+
 }

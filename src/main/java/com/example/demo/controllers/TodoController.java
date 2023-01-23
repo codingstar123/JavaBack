@@ -54,8 +54,18 @@ public class TodoController {
         // Find Todo by it's then use map to update it
         Todos.findById(id).map(Todo -> {
 
-        Todo.setSubject(fixTodo.getSubject());
-        Todo.setDetails(fixTodo.getDetails());
+        // Todo.setSubject(fixTodo.getSubject());
+        // Todo.setDetails(fixTodo.getDetails());
+        Todo.setZodiac(fixTodo.getZodiac());
+        Todo.setYear(fixTodo.getYear());
+        Todo.setGeneral(fixTodo.getGeneral());
+        Todo.setWealth(fixTodo.getWealth());
+        Todo.setHealth(fixTodo.getHealth());
+        Todo.setTips(fixTodo.getTips());
+        Todo.setImage(fixTodo.getImage());
+
+
+
         Todos.save(Todo);
         return Todo;
 
